@@ -33,7 +33,7 @@ class LoginFragment : Fragment() {
             val password = binding.etPassword.text.toString()
 
             if (email.isNotEmpty() && password.isNotEmpty()) {
-                // Aquí llamaremos al ViewModel para el login
+
                 viewModel.login(email, password)
             } else {
                 Toast.makeText(context, "Por favor, completa todos los campos", Toast.LENGTH_SHORT).show()
@@ -47,7 +47,7 @@ class LoginFragment : Fragment() {
         viewModel.loginResult.observe(viewLifecycleOwner) { isSuccess ->
             if (isSuccess) {
                 Toast.makeText(context, "Login Exitoso", Toast.LENGTH_SHORT).show()
-                // Aquí navegarías a la siguiente pantalla (Dashboard)
+
             } else {
                 Toast.makeText(context, "Error en las credenciales", Toast.LENGTH_SHORT).show()
             }
