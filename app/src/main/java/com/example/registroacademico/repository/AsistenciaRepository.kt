@@ -8,7 +8,6 @@ class AsistenciaRepository(private val asistenciaDao: AsistenciaDao) {
 
     suspend fun insertarAsistencias(asistenciasMarcadas: Map<Int, Boolean>) {
         val listaParaInsertar = asistenciasMarcadas.map { (idDelAlumno, estado) ->
-            // Asegúrate de que los nombres aquí coincidan con Asistencia.kt
             Asistencia(
                 estudianteId = idDelAlumno,
                 fecha = Date().toString(),
