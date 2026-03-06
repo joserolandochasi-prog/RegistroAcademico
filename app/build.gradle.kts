@@ -50,6 +50,12 @@ dependencies {
     // Para usar 'by viewModels()'
     implementation("androidx.fragment:fragment-ktx:1.6.2")
 
+    // Retrofit y OkHttp
+    implementation(libs.retrofit)
+    implementation(libs.retrofit.gson)
+    implementation(libs.okhttp)
+    implementation(libs.okhttp.logging)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
