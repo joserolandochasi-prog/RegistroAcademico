@@ -1,12 +1,11 @@
-package com.registroacademico.model.entities
+package com.example.registroacademico.model.entities
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "docentes") // <--- La anotación va afuera, sobre la data class
+@Entity(tableName = "docentes")
 data class Docente(
-    @PrimaryKey(autoGenerate = true) val id: Int = 0,
-    val nombre: String,
-    val email: String,
-    val contrasena: String
+    @PrimaryKey(autoGenerate = true)
+    val id: Int = 0,
+    val nombre: String
 )

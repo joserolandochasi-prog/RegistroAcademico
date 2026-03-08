@@ -21,15 +21,10 @@ import androidx.room.PrimaryKey
         )
     ]
 )
-
 data class DetalleAsistencia(
-
     @PrimaryKey(autoGenerate = true)
     val id: Int = 0,
-
     val asistenciaId: Int,
-
     val estudianteId: Int,
-
     val presente: Boolean
 )
