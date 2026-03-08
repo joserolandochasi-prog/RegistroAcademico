@@ -20,17 +20,24 @@
         android:text="Tomar asistencia" />
 
     <Button
-        android:id="@+id/btnEstadisticas"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Ver estadísticas"
-        android:layout_marginTop="12dp" />
-
-    <Button
         android:id="@+id/btnRegistrarEstudiante"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Registrar estudiante"
+        android:layout_marginTop="12dp" />
+
+    <Button
+        android:id="@+id/btnVerEstudiantes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ver estudiantes"
+        android:layout_marginTop="12dp" />
+
+    <Button
+        android:id="@+id/btnEstadisticas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ver estadísticas"
         android:layout_marginTop="12dp" />
 
 </LinearLayout>

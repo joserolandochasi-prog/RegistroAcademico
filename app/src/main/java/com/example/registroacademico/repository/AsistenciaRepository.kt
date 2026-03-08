@@ -16,8 +16,8 @@ class AsistenciaRepository(
     ) {
         val asistenciaId = asistenciaDao.insertarAsistencia(asistencia).toInt()
 
-        val detallesConId = detalles.map {
-            it.copy(asistenciaId = asistenciaId)
+        val detallesConId = detalles.map { detalle ->
+            detalle.copy(asistenciaId = asistenciaId)
         }
 
         detalleAsistenciaDao.insertarDetalles(detallesConId)

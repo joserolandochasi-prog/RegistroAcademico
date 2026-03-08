@@ -1,4 +1,4 @@
-package com.example.registroacademico.ui.docente
+package com.example.registroacademico.view.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -10,7 +10,7 @@ class EstudianteAdapter(
     private var estudiantes: List<Estudiante>
 ) : RecyclerView.Adapter<EstudianteAdapter.ViewHolder>() {
 
-    private val asistenciaMap = mutableMapOf<Int, Boolean>()
+    private val asistenciaMap = mutableMapOf<String, Boolean>()
 
     inner class ViewHolder(val binding: ItemEstudianteBinding) :
         RecyclerView.ViewHolder(binding.root)
@@ -25,10 +25,9 @@ class EstudianteAdapter(
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-
         val estudiante = estudiantes[position]
 
-        holder.binding.tvNombre.text = estudiante.nombre
+        holder.binding.tvNombre.text = "${estudiante.nombre} ${estudiante.apellido}"
 
         holder.binding.checkAsistencia.setOnCheckedChangeListener(null)
         holder.binding.checkAsistencia.isChecked = asistenciaMap[estudiante.id] ?: false
@@ -40,14 +39,12 @@ class EstudianteAdapter(
 
     override fun getItemCount(): Int = estudiantes.size
 
-    // Actualizar lista
     fun actualizarLista(nuevaLista: List<Estudiante>) {
         estudiantes = nuevaLista
         notifyDataSetChanged()
     }
 
-    // Obtener asistencia marcada
-    fun obtenerAsistencias(): Map<Int, Boolean> {
+    fun obtenerAsistencias(): Map<String, Boolean> {
         return asistenciaMap
     }
 }

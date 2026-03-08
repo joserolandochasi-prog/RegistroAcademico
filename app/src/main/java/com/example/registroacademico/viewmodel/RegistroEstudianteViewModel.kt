@@ -20,6 +20,7 @@ class RegistroEstudianteViewModel(application: Application) : AndroidViewModel(a
     fun registrar(nombre: String, apellido: String) {
         viewModelScope.launch {
             val nuevoEstudiante = Estudiante(
+                id = "",
                 nombre = nombre,
                 apellido = apellido
             )

@@ -1,35 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/nav_graph_aut"
     app:startDestination="@id/loginFragment">
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.registroacademico.ui.login.LoginFragment"
+        android:name="com.example.registroacademico.view.auth.LoginFragment"
         android:label="Login" />
 
     <fragment
         android:id="@+id/docenteDashboardFragment"
-        android:name="com.example.registroacademico.ui.docente.DocenteDashboardFragment"
+        android:name="com.example.registroacademico.view.docente.DocenteDashboardFragment"
         android:label="Dashboard Docente" />
 
     <fragment
         android:id="@+id/estudianteDashboardFragment"
-        android:name="com.example.registroacademico.ui.estudiante.EstudianteDashboardFragment"
+        android:name="com.example.registroacademico.view.estudiante.EstudianteDashboardFragment"
         android:label="Dashboard Estudiante" />
+
     <fragment
         android:id="@+id/tomarAsistenciaFragment"
-        android:name="com.example.registroacademico.ui.docente.TomarAsistenciaFragment"
-        android:label="Tomar Asistencia"/>
+        android:name="com.example.registroacademico.view.docente.TomarAsistenciaFragment"
+        android:label="Tomar Asistencia" />
 
     <fragment
         android:id="@+id/estadisticasFragment"
-        android:name="com.example.registroacademico.ui.docente.EstadisticasFragment"
-        android:label="Estadísticas"/>
+        android:name="com.example.registroacademico.view.docente.EstadisticasFragment"
+        android:label="Estadísticas" />
 
     <fragment
         android:id="@+id/registerFragment"
         android:name="com.example.registroacademico.view.estudiante.RegisterFragment"
         android:label="Registrar Estudiante" />
 
+    <fragment
+        android:id="@+id/listaEstudiantesFragment"
+        android:name="com.example.registroacademico.view.docente.ListaEstudiantesFragment"
+        android:label="Lista de Estudiantes" />
+
+    <fragment
+        android:id="@+id/estudianteDashboardFragment"
+        android:name="com.example.registroacademico.view.estudiante.EstudianteDashboardFragment"
+        android:label="Dashboard Estudiante"/>
 </navigation>

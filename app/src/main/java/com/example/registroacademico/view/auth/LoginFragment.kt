@@ -1,4 +1,4 @@
-package com.example.registroacademico.ui.login
+package com.example.registroacademico.view.auth
 
 import android.os.Bundle
 import android.view.View

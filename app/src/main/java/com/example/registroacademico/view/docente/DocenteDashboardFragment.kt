@@ -1,4 +1,4 @@
-package com.example.registroacademico.ui.docente
+package com.example.registroacademico.view.docente
 
 import android.os.Bundle
 import android.view.View
@@ -15,6 +15,7 @@ class DocenteDashboardFragment : Fragment(R.layout.fragment_docente_dashboard) {
         val btnTomar = view.findViewById<Button>(R.id.btnTomarAsistencia)
         val btnEstadisticas = view.findViewById<Button>(R.id.btnEstadisticas)
         val btnRegistrar = view.findViewById<Button>(R.id.btnRegistrarEstudiante)
+        val btnVerEstudiantes = view.findViewById<Button>(R.id.btnVerEstudiantes)
 
         btnTomar.setOnClickListener {
             findNavController().navigate(R.id.tomarAsistenciaFragment)
@@ -26,6 +27,10 @@ class DocenteDashboardFragment : Fragment(R.layout.fragment_docente_dashboard) {
 
         btnRegistrar.setOnClickListener {
             findNavController().navigate(R.id.registerFragment)
+        }
+
+        btnVerEstudiantes.setOnClickListener {
+            findNavController().navigate(R.id.listaEstudiantesFragment)
         }
     }
 }

@@ -2,6 +2,7 @@ package com.example.registroacademico.repository
 
 import com.example.registroacademico.model.dao.EstudianteDao
 import com.example.registroacademico.model.entities.Estudiante
+import com.example.registroacademico.network.RetrofitClient
 
 class EstudianteRepository(
     private val estudianteDao: EstudianteDao
@@ -23,7 +24,15 @@ class EstudianteRepository(
         estudianteDao.actualizarEstudiante(estudiante)
     }
 
-    suspend fun obtenerEstudiantePorId(id: Int): Estudiante? {
+    suspend fun obtenerEstudiantePorId(id: String): Estudiante? {
         return estudianteDao.obtenerEstudiantePorId(id)
+    }
+
+    suspend fun obtenerEstudiantesDesdeApi(): List<Estudiante> {
+        return RetrofitClient.api.obtenerEstudiantes()
+    }
+
+    suspend fun crearEstudianteEnApi(estudiante: Estudiante): Estudiante {
+        return RetrofitClient.api.crearEstudiante(estudiante)
     }
 }

@@ -1,18 +1,17 @@
-package com.example.registroacademico.data.api
-import com.example.registroacademico.model.entities.Asistencia
-import retrofit2.Response
+package com.example.registroacademico.network
+
+import com.example.registroacademico.model.entities.Estudiante
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
 
 interface ApiService {
 
-    @GET("asistencias")
-    suspend fun obtenerAsistencias(): List<Asistencia>
+    @GET("estudiantes")
+    suspend fun obtenerEstudiantes(): List<Estudiante>
 
-    @POST("asistencias")
-    suspend fun guardarAsistencia(
-        @Body asistencia: Asistencia
-    ): Response<Asistencia>
-
+    @POST("estudiantes")
+    suspend fun crearEstudiante(
+        @Body estudiante: Estudiante
+    ): Estudiante
 }

@@ -14,11 +14,11 @@ interface EstudianteDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertarEstudiante(estudiante: Estudiante)
 
-    @Query("SELECT * FROM estudiantes ORDER BY id DESC")
+    @Query("SELECT * FROM estudiantes ORDER BY nombre ASC")
     suspend fun obtenerEstudiantes(): List<Estudiante>
 
     @Query("SELECT * FROM estudiantes WHERE id = :id LIMIT 1")
-    suspend fun obtenerEstudiantePorId(id: Int): Estudiante?
+    suspend fun obtenerEstudiantePorId(id: String): Estudiante?
 
     @Update
     suspend fun actualizarEstudiante(estudiante: Estudiante)
@@ -27,5 +27,5 @@ interface EstudianteDao {
     suspend fun eliminarEstudiante(estudiante: Estudiante)
 
     @Query("DELETE FROM estudiantes WHERE id = :id")
-    suspend fun eliminarPorId(id: Int)
+    suspend fun eliminarPorId(id: String)
 }
