@@ -1,52 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="16dp"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="16.dp">
+    android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/tvTituloAsistencia"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Registrar Asistencia"
-        android:textSize="24sp"
+        android:text="Tomar Asistencia"
+        android:textSize="20sp"
         android:textStyle="bold"
-        android:textColor="@android:color/black"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/tvFecha"
+        android:layout_marginBottom="10dp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Fecha: 09/03/2026"
-        android:textSize="14sp"
-        app:layout_constraintTop_toBottomOf="@id/tvTituloAsistencia"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="4.dp" />
+        android:layout_height="wrap_content"/>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvEstudiantes"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="16.dp"
-        android:layout_marginBottom="16.dp"
-        app:layout_constraintTop_toBottomOf="@id/tvFecha"
-        app:layout_constraintBottom_toTopOf="@id/btnGuardarAsistencia"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <Button
-        android:id="@+id/btnGuardarAsistencia"
+        android:id="@+id/recyclerEstudiantes"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Guardar Registro"
-        android:backgroundTint="@color/design_default_color_primary"
-        android:textColor="@android:color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:layout_height="match_parent"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

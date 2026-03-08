@@ -1,6 +1,30 @@
-<?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/nav_graph_auth">
+    android:id="@+id/nav_graph_aut"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.registroacademico.ui.login.LoginFragment"
+        android:label="Login" />
+
+    <fragment
+        android:id="@+id/docenteDashboardFragment"
+        android:name="com.example.registroacademico.ui.docente.DocenteDashboardFragment"
+        android:label="Dashboard Docente" />
+
+    <fragment
+        android:id="@+id/estudianteDashboardFragment"
+        android:name="com.example.registroacademico.ui.estudiante.EstudianteDashboardFragment"
+        android:label="Dashboard Estudiante" />
+    <fragment
+        android:id="@+id/tomarAsistenciaFragment"
+        android:name="com.example.registroacademico.ui.docente.TomarAsistenciaFragment"
+        android:label="Tomar Asistencia"/>
+
+    <fragment
+        android:id="@+id/estadisticasFragment"
+        android:name="com.example.registroacademico.ui.docente.EstadisticasFragment"
+        android:label="Estadísticas"/>
 
 </navigation>

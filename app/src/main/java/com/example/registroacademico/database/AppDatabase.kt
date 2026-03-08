@@ -1,4 +1,12 @@
-package com.example.registroacademico.database
+import androidx.room.Database
+import androidx.room.RoomDatabase
+import com.example.registroacademico.model.entities.Asistencia
+import com.example.registroacademico.model.entities.Estudiante
 
-class AppDatabase {
+@Database(
+    entities = [Asistencia::class, Estudiante::class],
+    version = 1
+)
+abstract class AppDatabase : RoomDatabase() {
+
 }

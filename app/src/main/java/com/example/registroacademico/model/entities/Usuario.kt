@@ -1,4 +1,13 @@
 package com.example.registroacademico.model.entities
 
-class Usuario {
-}
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity(tableName = "usuarios")
+data class Usuario(
+    val id: Int,
+    val nombre: String,
+    val email: String,
+    val password: String,
+    val rol: String
+)

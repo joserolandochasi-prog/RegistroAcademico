@@ -10,18 +10,20 @@ class AsistenciaAdapter(
     private var estudiantes: List<Estudiante> = emptyList()
 ) : RecyclerView.Adapter<AsistenciaAdapter.AsistenciaViewHolder>() {
 
-    // Aquí guardaremos quiénes marcaron asistencia (ID del estudiante -> Presente/Ausente)
+    // 1. Solo necesitamos UN mapa para guardar los estados
     private val asistenciaMap = mutableMapOf<Int, Boolean>()
 
     inner class AsistenciaViewHolder(private val binding: ItemEstudianteAsistenciaBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(estudiante: Estudiante) {
-            binding.tvNombreEstudiante.text = "${estudiante.nombre} ${estudiante.apellido}"
+            binding.tvNombreEstudiante.text = estudiante.nombre
 
-            // Configurar el checkbox según nuestro mapa
+            // Evitamos errores de reciclaje quitando el listener antes de asignar el valor
+            binding.cbAsistencia.setOnCheckedChangeListener(null)
             binding.cbAsistencia.isChecked = asistenciaMap[estudiante.id] ?: false
 
+            // Cuando el profesor marca el check, guardamos el ID y el estado
             binding.cbAsistencia.setOnCheckedChangeListener { _, isChecked ->
                 asistenciaMap[estudiante.id] = isChecked
             }
@@ -41,10 +43,14 @@ class AsistenciaAdapter(
 
     override fun getItemCount(): Int = estudiantes.size
 
+    // 2. Función para actualizar la lista desde el ViewModel
     fun updateLista(nuevaLista: List<Estudiante>) {
         this.estudiantes = nuevaLista
         notifyDataSetChanged()
     }
 
-    fun getAsistenciasMarcadas(): Map<Int, Boolean> = asistenciaMap
+    // 3. Esta es la función que llama el Fragmento para guardar en Room
+    fun obtenerAsistencias(): Map<Int, Boolean> {
+        return asistenciaMap
+    }
 }
