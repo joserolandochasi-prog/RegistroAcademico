@@ -1,15 +1,23 @@
 package com.example.registroacademico.model.dao
 
-import androidx.lifecycle.LiveData
-import androidx.room.*
+import androidx.room.Dao
+import androidx.room.Insert
+import androidx.room.OnConflictStrategy
+import androidx.room.Query
 import com.example.registroacademico.model.entities.Usuario
 
 @Dao
 interface UsuarioDao {
 
-    @Insert
-    suspend fun insertar(usuario: Usuario)
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertarUsuario(usuario: Usuario)
 
     @Query("SELECT * FROM usuarios WHERE email = :email AND password = :password LIMIT 1")
-    fun login(email: String, password: String): LiveData<Usuario?>
+    suspend fun login(email: String, password: String): Usuario?
+
+    @Query("SELECT * FROM usuarios")
+    suspend fun obtenerUsuarios(): List<Usuario>
+
+    @Query("DELETE FROM usuarios")
+    suspend fun eliminarTodos()
 }
