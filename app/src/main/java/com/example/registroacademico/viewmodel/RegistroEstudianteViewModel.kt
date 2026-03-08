@@ -17,10 +17,11 @@ class RegistroEstudianteViewModel(application: Application) : AndroidViewModel(a
         repository = EstudianteRepository(dao)
     }
 
-    fun registrar(nombre: String) {
+    fun registrar(nombre: String, apellido: String) {
         viewModelScope.launch {
             val nuevoEstudiante = Estudiante(
-                nombre = nombre
+                nombre = nombre,
+                apellido = apellido
             )
             repository.guardarEstudiante(nuevoEstudiante)
         }

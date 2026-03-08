@@ -10,11 +10,11 @@ import com.example.registroacademico.R
 class DocenteDashboardFragment : Fragment(R.layout.fragment_docente_dashboard) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-
         super.onViewCreated(view, savedInstanceState)
 
         val btnTomar = view.findViewById<Button>(R.id.btnTomarAsistencia)
         val btnEstadisticas = view.findViewById<Button>(R.id.btnEstadisticas)
+        val btnRegistrar = view.findViewById<Button>(R.id.btnRegistrarEstudiante)
 
         btnTomar.setOnClickListener {
             findNavController().navigate(R.id.tomarAsistenciaFragment)
@@ -24,5 +24,8 @@ class DocenteDashboardFragment : Fragment(R.layout.fragment_docente_dashboard) {
             findNavController().navigate(R.id.estadisticasFragment)
         }
 
+        btnRegistrar.setOnClickListener {
+            findNavController().navigate(R.id.registerFragment)
+        }
     }
 }

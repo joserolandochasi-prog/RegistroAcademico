@@ -15,4 +15,15 @@ class EstudianteRepository(
         return estudianteDao.obtenerEstudiantes()
     }
 
+    suspend fun eliminarEstudiante(estudiante: Estudiante) {
+        estudianteDao.eliminarEstudiante(estudiante)
+    }
+
+    suspend fun actualizarEstudiante(estudiante: Estudiante) {
+        estudianteDao.actualizarEstudiante(estudiante)
+    }
+
+    suspend fun obtenerEstudiantePorId(id: Int): Estudiante? {
+        return estudianteDao.obtenerEstudiantePorId(id)
+    }
 }

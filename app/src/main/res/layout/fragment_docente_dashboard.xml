@@ -6,23 +6,31 @@
     android:layout_height="match_parent">
 
     <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="Panel del Docente"
         android:textSize="22sp"
         android:textStyle="bold"
-        android:layout_marginBottom="20dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_marginBottom="20dp" />
 
     <Button
         android:id="@+id/btnTomarAsistencia"
-        android:text="Tomar asistencia"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:text="Tomar asistencia" />
 
     <Button
         android:id="@+id/btnEstadisticas"
-        android:text="Ver estadísticas"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:text="Ver estadísticas"
+        android:layout_marginTop="12dp" />
+
+    <Button
+        android:id="@+id/btnRegistrarEstudiante"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Registrar estudiante"
+        android:layout_marginTop="12dp" />
 
 </LinearLayout>
