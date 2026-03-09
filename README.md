@@ -133,7 +133,7 @@ erDiagram
 ![Estadisticas](screenshots/PanelEsAsis.png)
 
 ---
-## 🔧 Configuración e Instalación
+##  Configuración e Instalación
 
 1. **Clonar el repositorio:**
    ```sh
@@ -145,7 +145,7 @@ erDiagram
 
 ---
 
-## 🔑 Acceso Rápido (Datos de Prueba)
+##  Acceso Rápido (Datos de Prueba)
 
 La base de datos se inicializa automáticamente con un usuario administrador:
 - **Email:** `admin@correo.com`
