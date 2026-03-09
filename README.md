@@ -46,7 +46,7 @@ El proyecto utiliza la arquitectura **MVVM (Model - View - ViewModel)** para sep
 
 ## Diagrama Entidad Relación (DER)
 
-![DER](screenshots/der.png)
+![DER](screenshots/der.jpeg)
 
 ---
 
