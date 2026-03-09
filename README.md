@@ -53,19 +53,19 @@ El proyecto utiliza la arquitectura **MVVM (Model - View - ViewModel)** para sep
 ## Capturas de pantalla
 
 ### Inicio de sesión
-![Login](screenshots/login.png)
+![Login](screenshots/Login.png)
 
 ### Panel de administrador
-![Admin](screenshots/admin_dashboard.png)
+![Admin](screenshots/PanelAdmin.png)
 
 ### Panel de docente
-![Docente](screenshots/docente_dashboard.png)
+![Docente](screenshots/PanelDocente.png)
 
 ### Registro de asistencia
-![Asistencia](screenshots/tomar_asistencia.png)
+![Asistencia](screenshots/TomaAsistencia.png)
 
 ### Estadísticas / resumen
-![Estadisticas](screenshots/estadisticas.png)
+![Estadisticas](screenshots/PanelEsAsis.png)
 
 ---
 
