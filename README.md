@@ -45,6 +45,66 @@ El proyecto utiliza la arquitectura **MVVM (Model - View - ViewModel)** para sep
 ---
 
 ## Diagrama Entidad Relación (DER)
+erDiagram
+    %% Relaciones principales
+    USUARIO ||--o{ MATERIA : "imparte (docenteId)"
+    USUARIO ||--o| DOCENTE : "puede tener perfil de"
+
+    MATERIA ||--o{ ASISTENCIA : "tiene registros de"
+    MATERIA ||--o{ INSCRIPCION : "contiene"
+
+    ESTUDIANTE ||--o{ INSCRIPCION : "esta inscrito en"
+    ESTUDIANTE ||--o{ DETALLE_ASISTENCIA : "aparece en"
+
+    ASISTENCIA ||--|{ DETALLE_ASISTENCIA : "se compone de"
+
+    %% Tablas
+    USUARIO {
+        int id PK
+        string nombre
+        string email
+        string password
+        string rol "admin/docente/estudiante"
+    }
+
+    DOCENTE {
+        int id PK
+        int usuarioId FK "Usuario.id"
+    }
+
+    ESTUDIANTE {
+        int id PK
+        string nombre
+        string apellido
+        string email
+    }
+
+    MATERIA {
+        int id PK
+        string nombre
+        string paralelo
+        int docenteId FK "Usuario.id"
+    }
+
+    ASISTENCIA {
+        int id PK
+        string fecha
+        string hora
+        int materiaId FK "Materia.id"
+    }
+
+    DETALLE_ASISTENCIA {
+        int id PK
+        int asistenciaId FK "Asistencia.id"
+        int estudianteId FK "Estudiante.id"
+        boolean presente
+    }
+
+    INSCRIPCION {
+        int id PK
+        int estudianteId FK "Estudiante.id"
+        int materiaId FK "Materia.id"
+    }
 
 ![DER](screenshots/der.jpeg)
 
