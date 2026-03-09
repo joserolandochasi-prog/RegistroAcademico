@@ -111,8 +111,7 @@ erDiagram
     }
 ```
 
-### Imagen del DER
-![DER](screenshots/der.jpeg)
+
 
 ---
 
@@ -137,7 +136,7 @@ erDiagram
 
 ## Integrantes
 
-- Chasi José
+- Chasi Amaya José
 - Chiriboga Maria José
 
 ---
