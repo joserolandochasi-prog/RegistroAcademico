@@ -133,6 +133,26 @@ erDiagram
 ![Estadisticas](screenshots/PanelEsAsis.png)
 
 ---
+## 🔧 Configuración e Instalación
+
+1. **Clonar el repositorio:**
+   ```sh
+   git clone https://github.com/joserolandochasi-prog/RegistroAcademico.git
+   ```
+2. **Abrir en Android Studio:** Importa el proyecto y deja que Gradle descargue las dependencias.
+3. **Configuración de MockAPI:** 
+   Actualmente configurado en `RetrofitClient.kt`. Asegúrate de que los recursos en MockAPI coincidan con las rutas definidas en `ApiService.kt`.
+
+---
+
+## 🔑 Acceso Rápido (Datos de Prueba)
+
+La base de datos se inicializa automáticamente con un usuario administrador:
+- **Email:** `admin@correo.com`
+- **Password:** `admin`
+
+---
+---
 
 ## Integrantes
 
