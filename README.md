@@ -1,19 +1,21 @@
 # Proyecto Final - Registro Académico y Asistencia
 
 ## Descripción del proyecto
-Tema: Persistencia de datos local para la gestión de control académico. 
-Título del Proyecto: Sistema Móvil de Gestión de Asistencia y Control Académico (RegistroAcademico)
+**Tema:** Persistencia de datos local para la gestión de control académico.  
+**Título del Proyecto:** Sistema Móvil de Gestión de Asistencia y Control Académico (**RegistroAcademico**).
 
 El sistema permite manejar distintos roles dentro de la aplicación:
+
 - **Administrador:** crea usuarios y asigna roles.
-- **Docente:** crea materias/paralelos y registra la asistencia de los estudiantes inscritos.
-- **Estudiante:** se inscribe en materias y consulta su información académica/asistencia.
+- **Docente:** crea materias y paralelos, y registra la asistencia de los estudiantes inscritos.
+- **Estudiante:** se inscribe en materias y consulta su información académica y asistencia.
 
 La aplicación fue desarrollada aplicando arquitectura **MVVM**, persistencia local con **Room Database** y consumo de servicios externos mediante **Retrofit**.
 
 ---
 
 ## Tecnologías utilizadas
+
 - Kotlin
 - Android Studio
 - Room Database
@@ -26,6 +28,7 @@ La aplicación fue desarrollada aplicando arquitectura **MVVM**, persistencia lo
 ---
 
 ## Funcionalidades principales
+
 - Inicio de sesión por roles
 - Gestión de usuarios
 - Asignación de roles
@@ -40,12 +43,12 @@ La aplicación fue desarrollada aplicando arquitectura **MVVM**, persistencia lo
 ---
 
 ## Arquitectura
+
 El proyecto utiliza la arquitectura **MVVM (Model - View - ViewModel)** para separar la lógica de negocio, la persistencia de datos y la interfaz gráfica.
 
 ---
 
-## Diagrama Entidad Relación (DER)
-# Diagrama entidad-relación
+## Diagrama Entidad-Relación (DER)
 
 ```mermaid
 erDiagram
@@ -65,12 +68,12 @@ erDiagram
         string nombre
         string email
         string password
-        string rol "admin/docente/estudiante"
+        string rol
     }
 
     DOCENTE {
         int id PK
-        int usuarioId FK "Usuario.id"
+        int usuarioId FK
     }
 
     ESTUDIANTE {
@@ -84,28 +87,31 @@ erDiagram
         int id PK
         string nombre
         string paralelo
-        int docenteId FK "Usuario.id"
+        int docenteId FK
     }
 
     ASISTENCIA {
         int id PK
         string fecha
         string hora
-        int materiaId FK "Materia.id"
+        int materiaId FK
     }
 
     DETALLE_ASISTENCIA {
         int id PK
-        int asistenciaId FK "Asistencia.id"
-        int estudianteId FK "Estudiante.id"
+        int asistenciaId FK
+        int estudianteId FK
         boolean presente
     }
 
     INSCRIPCION {
         int id PK
-        int estudianteId FK "Estudiante.id"
-        int materiaId FK "Materia.id"
+        int estudianteId FK
+        int materiaId FK
     }
+```
+
+### Imagen del DER
 ![DER](screenshots/der.jpeg)
 
 ---
@@ -130,10 +136,12 @@ erDiagram
 ---
 
 ## Integrantes
+
 - Chasi José
 - Chiriboga Maria José
 
 ---
 
 ## Repositorio
+
 Proyecto desarrollado como parte del examen final de la materia de Aplicaciones Móviles.
