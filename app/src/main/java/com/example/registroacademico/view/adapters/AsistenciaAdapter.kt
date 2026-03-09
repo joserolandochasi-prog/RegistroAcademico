@@ -10,16 +10,15 @@ class AsistenciaAdapter(
     private var estudiantes: List<Estudiante> = emptyList()
 ) : RecyclerView.Adapter<AsistenciaAdapter.AsistenciaViewHolder>() {
 
-    // Aquí guardaremos quiénes marcaron asistencia (ID del estudiante -> Presente/Ausente)
     private val asistenciaMap = mutableMapOf<Int, Boolean>()
 
     inner class AsistenciaViewHolder(private val binding: ItemEstudianteAsistenciaBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(estudiante: Estudiante) {
-            binding.tvNombreEstudiante.text = "${estudiante.nombre} ${estudiante.apellido}"
+            binding.tvNombreEstudiante.text = estudiante.nombre
 
-            // Configurar el checkbox según nuestro mapa
+            binding.cbAsistencia.setOnCheckedChangeListener(null)
             binding.cbAsistencia.isChecked = asistenciaMap[estudiante.id] ?: false
 
             binding.cbAsistencia.setOnCheckedChangeListener { _, isChecked ->
@@ -46,5 +45,7 @@ class AsistenciaAdapter(
         notifyDataSetChanged()
     }
 
-    fun getAsistenciasMarcadas(): Map<Int, Boolean> = asistenciaMap
+    fun obtenerAsistencias(): Map<Int, Boolean> {
+        return asistenciaMap
+    }
 }

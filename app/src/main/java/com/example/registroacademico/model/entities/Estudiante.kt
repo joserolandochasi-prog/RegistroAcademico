@@ -9,7 +9,7 @@ data class Estudiante(
     val id: Int = 0,
     val nombre: String,
     val apellido: String,
-    val email: String,
-    val password: String,
-    val rol: String
+    val email: String = "",
+    val materiaAsignada: String = "",
+    val paraleloAsignado: String = ""
 )

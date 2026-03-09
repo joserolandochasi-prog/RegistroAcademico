@@ -27,42 +27,57 @@ android {
             )
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
+
     kotlinOptions {
         jvmTarget = "11"
     }
+
     buildFeatures {
         viewBinding = true
     }
 }
 
 dependencies {
+
+    // Android básicas
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+
+    // Navigation
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
-    implementation(libs.core.ktx)
+
+    // Lifecycle
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(libs.androidx.lifecycle.livedata.ktx)
+    implementation(libs.androidx.lifecycle.runtime.ktx)
+
+    // MPAndroidChart (gráficas)
+    implementation("com.github.PhilJay:MPAndroidChart:v3.1.0")
+
+    // Retrofit (MockAPI)
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+
+    // Room (Base de datos local)
+    val room_version = "2.6.1"
+    implementation("androidx.room:room-runtime:$room_version")
+    implementation("androidx.room:room-ktx:$room_version")
+    kapt("androidx.room:room-compiler:$room_version")
+
+    // Corrutinas
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
+
+    // Testing
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-    dependencies {
-        // ... las que ya tengas ...
-
-        implementation(libs.androidx.room.runtime)
-        implementation(libs.androidx.room.ktx)
-        // Esta línea es especial, va con 'kapt' o 'annotationProcessor'
-        annotationProcessor(libs.androidx.room.compiler)
-    }
-    dependencies {
-        val room_version = "2.6.1"
-        implementation("androidx.room:room-runtime:$room_version")
-        implementation("androidx.room:room-ktx:$room_version")
-        kapt ("androidx.room:room-compiler:$room_version") // O ksp si lo configuraste así
-    }
 }

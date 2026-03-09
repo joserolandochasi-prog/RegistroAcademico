@@ -1,52 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16.dp">
+    android:padding="16dp">
 
     <TextView
-        android:id="@+id/tvTituloAsistencia"
+        android:id="@+id/tvTitulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Registrar Asistencia"
-        android:textSize="24sp"
+        android:text="Tomar Asistencia"
+        android:textSize="20sp"
         android:textStyle="bold"
-        android:textColor="@android:color/black"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tvFecha"
+        android:id="@+id/tvSeleccionarMateria"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Fecha: 09/03/2026"
-        android:textSize="14sp"
-        app:layout_constraintTop_toBottomOf="@id/tvTituloAsistencia"
+        android:layout_marginTop="16dp"
+        android:text="Seleccione la Materia:"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="4.dp" />
+        app:layout_constraintTop_toBottomOf="@id/tvTitulo" />
+
+    <Spinner
+        android:id="@+id/spinnerMateriasAsistencia"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:minHeight="48dp"
+        app:layout_constraintTop_toBottomOf="@id/tvSeleccionarMateria" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvEstudiantes"
-        android:layout_width="0dp"
+        android:id="@+id/recyclerEstudiantes"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="16.dp"
-        android:layout_marginBottom="16.dp"
-        app:layout_constraintTop_toBottomOf="@id/tvFecha"
-        app:layout_constraintBottom_toTopOf="@id/btnGuardarAsistencia"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnGuardarAsistencia"
+        app:layout_constraintTop_toBottomOf="@id/spinnerMateriasAsistencia" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btnGuardarAsistencia"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Guardar Registro"
-        android:backgroundTint="@color/design_default_color_primary"
-        android:textColor="@android:color/white"
+        android:layout_marginTop="16dp"
+        android:padding="12dp"
+        android:text="GUARDAR ASISTENCIA"
+        app:icon="@android:drawable/ic_menu_save"
+        app:layout_constraintBottom_toTopOf="@+id/btnVolverMenu" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnVolverMenu"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="VOLVER AL MENÚ"
+        app:icon="@android:drawable/ic_menu_revert"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/progressBarTomar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,6 +1,125 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/nav_graph_auth">
+    android:id="@+id/nav_graph_aut"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.registroacademico.view.auth.LoginFragment"
+        android:label="Login">
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_adminDashboardFragment"
+            app:destination="@id/adminDashboardFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_bienvenidaFragment"
+            app:destination="@id/bienvenidaFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_docenteDashboardFragment"
+            app:destination="@id/docenteDashboardFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_estudianteDashboardFragment"
+            app:destination="@id/estudianteDashboardFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.registroacademico.view.auth.RegisterFragment"
+        android:label="Registro">
+        <action
+            android:id="@+id/action_registerFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/adminDashboardFragment"
+        android:name="com.example.registroacademico.view.admin.AdminDashboardFragment"
+        android:label="Panel Admin">
+        <action
+            android:id="@+id/action_adminDashboardFragment_to_gestionarMateriasFragment"
+            app:destination="@id/gestionarMateriasFragment" />
+        <action
+            android:id="@+id/action_adminDashboardFragment_to_gestionarEstudiantesFragment"
+            app:destination="@id/gestionarEstudiantesFragment" />
+        <action
+            android:id="@+id/action_adminDashboardFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/nav_graph_aut"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/bienvenidaFragment"
+        android:name="com.example.registroacademico.view.auth.BienvenidaFragment"
+        android:label="Bienvenido" />
+
+    <fragment
+        android:id="@+id/docenteDashboardFragment"
+        android:name="com.example.registroacademico.view.docente.DocenteDashboardFragment"
+        android:label="Dashboard Docente">
+        <action
+            android:id="@+id/action_docenteDashboardFragment_to_verAsistenciaEstudianteFragment"
+            app:destination="@id/verAsistenciaEstudianteFragment" />
+        <action
+            android:id="@+id/action_docenteDashboardFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/nav_graph_aut"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_docenteDashboardFragment_to_estadisticasFragment"
+            app:destination="@id/estadisticasFragment" />
+        <action
+            android:id="@+id/action_docenteDashboardFragment_to_tomarAsistenciaFragment"
+            app:destination="@id/tomarAsistenciaFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/estudianteDashboardFragment"
+        android:name="com.example.registroacademico.view.estudiante.EstudianteDashboardFragment"
+        android:label="Dashboard Estudiante">
+        <action
+            android:id="@+id/action_estudianteDashboardFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/nav_graph_aut"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/tomarAsistenciaFragment"
+        android:name="com.example.registroacademico.view.docente.TomarAsistenciaFragment"
+        android:label="Tomar Asistencia"/>
+
+    <fragment
+        android:id="@+id/estadisticasFragment"
+        android:name="com.example.registroacademico.view.docente.EstadisticasFragment"
+        android:label="Estadísticas"/>
+
+    <fragment
+        android:id="@+id/verAsistenciaEstudianteFragment"
+        android:name="com.example.registroacademico.view.docente.VerAsistenciaEstudianteFragment"
+        android:label="Detalle de Asistencia">
+        <argument
+            android:name="asistenciaId"
+            app:argType="integer" />
+        <argument
+            android:name="fecha"
+            app:argType="string" />
+        <argument
+            android:name="hora"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/gestionarMateriasFragment"
+        android:name="com.example.registroacademico.view.admin.GestionarMateriasFragment"
+        android:label="Gestionar Materias" />
+
+    <fragment
+        android:id="@+id/gestionarEstudiantesFragment"
+        android:name="com.example.registroacademico.view.admin.GestionarEstudiantesFragment"
+        android:label="Gestionar Estudiantes" />
 
 </navigation>
