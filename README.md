@@ -45,8 +45,10 @@ El proyecto utiliza la arquitectura **MVVM (Model - View - ViewModel)** para sep
 ---
 
 ## Diagrama Entidad Relación (DER)
+# Diagrama entidad-relación
+
+```mermaid
 erDiagram
-    %% Relaciones principales
     USUARIO ||--o{ MATERIA : "imparte (docenteId)"
     USUARIO ||--o| DOCENTE : "puede tener perfil de"
 
@@ -58,7 +60,6 @@ erDiagram
 
     ASISTENCIA ||--|{ DETALLE_ASISTENCIA : "se compone de"
 
-    %% Tablas
     USUARIO {
         int id PK
         string nombre
@@ -105,7 +106,6 @@ erDiagram
         int estudianteId FK "Estudiante.id"
         int materiaId FK "Materia.id"
     }
-
 ![DER](screenshots/der.jpeg)
 
 ---
